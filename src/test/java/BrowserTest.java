@@ -1,30 +1,20 @@
-import java.net.URL;
-import java.util.HashMap;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 
 public class BrowserTest {
-    RemoteWebDriver driver;
+    WebDriver driver;
 
     @BeforeTest
-    public void setUp() throws Exception {
-        ChromeOptions browserOptions = new ChromeOptions();
-        browserOptions.setPlatformName("Windows 10");
-        browserOptions.setBrowserVersion("latest"); // Use "latest" instead of "dev"
+    public void setUp() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless"); // Run Chrome in headless mode (for GitHub Actions)
+        options.addArguments("--no-sandbox"); // Bypass OS security model
+        options.addArguments("--disable-dev-shm-usage"); // Overcome limited resource problems
 
-        HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-        ltOptions.put("username", "idriskaju");
-        ltOptions.put("accessKey", "rVaSUBQVkxPA7FGJtqPJFonsCJezDMUG9CFWel0GTMTpZdv5rp");
-        ltOptions.put("project", "Untitled");
-        ltOptions.put("w3c", true);
-        ltOptions.put("plugin", "java-java");
-
-        browserOptions.setCapability("LT:Options", ltOptions);
-
-        driver = new RemoteWebDriver(new URL("https://hub.lambdatest.com/wd/hub"), browserOptions);
+        driver = new ChromeDriver(options); // Use local ChromeDriver
     }
 
     @Test
@@ -36,15 +26,14 @@ public class BrowserTest {
         driver.findElement(By.id("sum2")).sendKeys("15");
         driver.findElement(By.xpath("//button[text()='Get Sum']")).click();
         String text = driver.findElement(By.id("addmessage")).getText();
-        
 
         System.out.println("Result value is: " + text);
     }
 
     @AfterTest
     public void tearDown() {
-        
+        if (driver != null) {
             driver.quit();
-        
+        }
     }
 }

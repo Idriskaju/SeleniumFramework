@@ -59,7 +59,7 @@ public class BrowserTest {
         extent.flush();
     }
 
-    // 🔧 Screenshot method embedded in this class
+    // Screenshot method embedded in this class
     private String takeScreenshot(String testName) {
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String screenshotPath = "test-output/screenshots/" + testName + "_" + timestamp + ".png";
@@ -68,7 +68,7 @@ public class BrowserTest {
         File destFile = new File(screenshotPath);
 
         try {
-            destFile.getParentFile().mkdirs(); // Create folder if not exists
+            destFile.getParentFile().mkdirs(); 
             Files.copy(srcFile.toPath(), destFile.toPath());
         } catch (IOException e) {
             e.printStackTrace();

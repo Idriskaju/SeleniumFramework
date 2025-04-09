@@ -2,28 +2,28 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-09T07:33:30 SAST" name="Default suite" finished-at="2025-04-09T07:33:48 SAST" duration-ms="17281">
+  <suite started-at="2025-04-09T13:14:29 SAST" name="Default suite" finished-at="2025-04-09T13:15:54 SAST" duration-ms="84965">
     <groups>
     </groups>
-    <test started-at="2025-04-09T07:33:30 SAST" name="Default test" finished-at="2025-04-09T07:33:48 SAST" duration-ms="17281">
+    <test started-at="2025-04-09T13:14:29 SAST" name="Default test" finished-at="2025-04-09T13:15:54 SAST" duration-ms="84965">
       <class name="BrowserTest">
-        <test-method is-config="true" signature="setUpReport()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T07:33:30 SAST" name="setUpReport" finished-at="2025-04-09T07:33:31 SAST" duration-ms="574" status="PASS">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T13:14:29 SAST" name="setupReport" finished-at="2025-04-09T13:14:30 SAST" duration-ms="522" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpReport -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T07:33:31 SAST" name="setUp" finished-at="2025-04-09T07:33:38 SAST" duration-ms="6713" status="PASS">
+        </test-method> <!-- setupReport -->
+        <test-method is-config="true" signature="setupDriver()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T13:14:30 SAST" name="setupDriver" finished-at="2025-04-09T13:14:34 SAST" duration-ms="3785" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="myTest()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T07:33:38 SAST" name="myTest" finished-at="2025-04-09T07:33:46 SAST" duration-ms="8845" status="PASS">
+        </test-method> <!-- setupDriver -->
+        <test-method signature="fullFlowTest()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T13:14:34 SAST" name="fullFlowTest" finished-at="2025-04-09T13:15:53 SAST" duration-ms="79125" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- myTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T07:33:46 SAST" name="tearDown" finished-at="2025-04-09T07:33:47 SAST" duration-ms="495" status="PASS">
+        </test-method> <!-- fullFlowTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T13:15:53 SAST" name="tearDown" finished-at="2025-04-09T13:15:54 SAST" duration-ms="782" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="flushReport()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T07:33:47 SAST" name="flushReport" finished-at="2025-04-09T07:33:48 SAST" duration-ms="576" status="PASS">
+        <test-method is-config="true" signature="flushReport()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T13:15:54 SAST" name="flushReport" finished-at="2025-04-09T13:15:54 SAST" duration-ms="682" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flushReport -->

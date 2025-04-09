@@ -43,3 +43,24 @@ jobs:
         with:
           name: Screenshots
           path: test-output/screenshots/
+
+      - name: Send Email Notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: Selenium Test Report - ${{ job.status }}
+          to: ${{ secrets.EMAIL_TO }}
+          from: GitHub Actions <${{ secrets.EMAIL_USERNAME }}>
+          body: |
+            Hello!
+
+            Your Selenium test run has completed on branch `${{ github.ref_name }}`.
+            ✅ Status: **${{ job.status }}**
+            📁 Repository: ${{ github.repository }}
+            🔗 View full run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Regards,  
+            Idris GitHub Actions

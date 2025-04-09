@@ -12,6 +12,8 @@ import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.time.Duration;
+import org.apache.commons.io.FileUtils;
+
 
 public class BrowserTest {
     WebDriver driver;
@@ -19,10 +21,12 @@ public class BrowserTest {
     ExtentTest test;
 
     @BeforeTest
-    public void setupReport() {
+    public void setupReport() throws IOException {
+    	FileUtils.deleteDirectory(new File("test-output/screenshots"));
         ExtentSparkReporter spark = new ExtentSparkReporter("test-output/ExtentReport.html");
         extent = new ExtentReports();
         extent.attachReporter(spark);
+        
     }
 
     @BeforeMethod
@@ -123,19 +127,22 @@ public class BrowserTest {
     // Utility to take screenshots
     private String takeScreenshot(String name) {
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String path = "test-output/screenshots/" + name + "_" + timestamp + ".png";
+        String fileName = name + "_" + timestamp + ".png";
+        String screenshotDir = "test-output/screenshots/";
+        String relativePath = "screenshots/" + fileName;
+        String fullPath = screenshotDir + fileName;
 
         File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File dest = new File(path);
+        File dest = new File(fullPath);
         try {
             dest.getParentFile().mkdirs();
             Files.copy(src.toPath(), dest.toPath());
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return path;
-    }
 
+        return relativePath; 
+    }
     // Utility to log failure and attach screenshot
     private void captureFail(String step, Exception e) throws IOException {
         test.fail(step + " failed: " + e.getMessage(),

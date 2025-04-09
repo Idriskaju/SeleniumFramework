@@ -36,3 +36,4 @@ jobs:
       with:
          name: ExtentReport
          path: test-output/ExtentReport.html
+    name: Run Selenium Tests 

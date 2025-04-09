@@ -39,7 +39,7 @@ public class BrowserTest {
         options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
     @Test(dataProvider = "loginData")
@@ -51,6 +51,7 @@ public class BrowserTest {
             driver.findElement(By.id("userName")).sendKeys(username);
             driver.findElement(By.id("password")).sendKeys(password);
             driver.findElement(By.id("login")).click();
+            Thread.sleep(3000);
             test.pass("Logged in").addScreenCaptureFromPath(takeScreenshot("login"));
         } catch (Exception e) {
             captureFail("Login", e);

@@ -2,23 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-07T17:57:48 SAST" name="Default suite" finished-at="2025-04-07T17:58:02 SAST" duration-ms="14109">
+  <suite started-at="2025-04-09T07:33:30 SAST" name="Default suite" finished-at="2025-04-09T07:33:48 SAST" duration-ms="17281">
     <groups>
     </groups>
-    <test started-at="2025-04-07T17:57:48 SAST" name="Default test" finished-at="2025-04-07T17:58:02 SAST" duration-ms="14109">
+    <test started-at="2025-04-09T07:33:30 SAST" name="Default test" finished-at="2025-04-09T07:33:48 SAST" duration-ms="17281">
       <class name="BrowserTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:BrowserTest@1cf6d1be]" started-at="2025-04-07T17:57:48 SAST" name="setUp" finished-at="2025-04-07T17:57:56 SAST" duration-ms="8395" status="PASS">
+        <test-method is-config="true" signature="setUpReport()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T07:33:30 SAST" name="setUpReport" finished-at="2025-04-09T07:33:31 SAST" duration-ms="574" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpReport -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T07:33:31 SAST" name="setUp" finished-at="2025-04-09T07:33:38 SAST" duration-ms="6713" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="myTest()[pri:0, instance:BrowserTest@1cf6d1be]" started-at="2025-04-07T17:57:56 SAST" name="myTest" finished-at="2025-04-07T17:58:02 SAST" duration-ms="5257" status="PASS">
+        <test-method signature="myTest()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T07:33:38 SAST" name="myTest" finished-at="2025-04-09T07:33:46 SAST" duration-ms="8845" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- myTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:BrowserTest@1cf6d1be]" started-at="2025-04-07T17:58:02 SAST" name="tearDown" finished-at="2025-04-07T17:58:02 SAST" duration-ms="342" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T07:33:46 SAST" name="tearDown" finished-at="2025-04-09T07:33:47 SAST" duration-ms="495" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="flushReport()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T07:33:47 SAST" name="flushReport" finished-at="2025-04-09T07:33:48 SAST" duration-ms="576" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flushReport -->
       </class> <!-- BrowserTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

@@ -30,3 +30,9 @@ jobs:
 
     - name: Run tests with Maven
       run: mvn clean test
+
+    - name: Upload ExtentReport as Artifact
+      uses: actions/upload-artifact@v3
+      with:
+         name: ExtentReport
+         path: test-output/ExtentReport.html

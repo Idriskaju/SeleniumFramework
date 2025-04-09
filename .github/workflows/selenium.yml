@@ -11,29 +11,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
-      with:
-        java-version: '17'
-        distribution: 'temurin'
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
 
-    - name: Set up ChromeDriver
-      uses: nanasess/setup-chromedriver@v2
+      - name: Set up ChromeDriver
+        uses: nanasess/setup-chromedriver@v2
 
-    - name: Install Chrome
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y google-chrome-stable
+      - name: Install Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
 
-    - name: Run tests with Maven
-      run: mvn clean test
+      - name: Run tests with Maven
+        run: mvn clean test
 
-    - name: Upload ExtentReport as Artifact
-      uses: actions/upload-artifact@v3
-      with:
-         name: ExtentReport
-         path: test-output/ExtentReport.html
-    name: Run Selenium Tests 
+      - name: Upload ExtentReport as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ExtentReport
+          path: test-output/ExtentReport.html
+
+      - name: Upload screenshots folder as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Screenshots
+          path: test-output/screenshots/

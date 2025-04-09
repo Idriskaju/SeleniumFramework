@@ -1,29 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-09T13:14:29 SAST" name="Default suite" finished-at="2025-04-09T13:15:54 SAST" duration-ms="84965">
+  <suite started-at="2025-04-09T19:45:06 SAST" name="Default suite" finished-at="2025-04-09T19:45:08 SAST" duration-ms="2258">
     <groups>
     </groups>
-    <test started-at="2025-04-09T13:14:29 SAST" name="Default test" finished-at="2025-04-09T13:15:54 SAST" duration-ms="84965">
+    <test started-at="2025-04-09T19:45:06 SAST" name="Default test" finished-at="2025-04-09T19:45:08 SAST" duration-ms="2258">
       <class name="BrowserTest">
-        <test-method is-config="true" signature="setupReport()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T13:14:29 SAST" name="setupReport" finished-at="2025-04-09T13:14:30 SAST" duration-ms="522" status="PASS">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:BrowserTest@402c4085]" started-at="2025-04-09T19:45:06 SAST" name="setupReport" finished-at="2025-04-09T19:45:07 SAST" duration-ms="719" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method is-config="true" signature="setupDriver()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T13:14:30 SAST" name="setupDriver" finished-at="2025-04-09T13:14:34 SAST" duration-ms="3785" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupDriver -->
-        <test-method signature="fullFlowTest()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T13:14:34 SAST" name="fullFlowTest" finished-at="2025-04-09T13:15:53 SAST" duration-ms="79125" status="PASS">
+        <test-method signature="fullFlowTest(java.lang.String,java.lang.String)[pri:0, instance:BrowserTest@402c4085]" started-at="2025-04-09T19:45:08 SAST" name="fullFlowTest" data-provider="loginData" finished-at="2025-04-09T19:45:08 SAST" duration-ms="0" status="FAIL">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[java.lang.NoSuchFieldError: Factory]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: java.lang.NoSuchFieldError: Factory
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:58)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:159)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:809)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:734)
+at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72)
+at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:949)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.NoSuchFieldError: Factory
+at org.apache.poi.xssf.model.ThemesTable.readFrom(ThemesTable.java:119)
+at org.apache.poi.xssf.model.ThemesTable.<init>(ThemesTable.java:87)
+at org.apache.poi.ooxml.POIXMLFactory.createDocumentPart(POIXMLFactory.java:61)
+at org.apache.poi.ooxml.POIXMLDocumentPart.read(POIXMLDocumentPart.java:661)
+at org.apache.poi.ooxml.POIXMLDocument.load(POIXMLDocument.java:165)
+at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:260)
+at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:290)
+at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:286)
+at BrowserTest$ExcelUtil.readLoginData(BrowserTest.java:143)
+at BrowserTest.getLoginData(BrowserTest.java:167)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:54)
+... 25 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fullFlowTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T13:15:53 SAST" name="tearDown" finished-at="2025-04-09T13:15:54 SAST" duration-ms="782" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="flushReport()[pri:0, instance:BrowserTest@5149d738]" started-at="2025-04-09T13:15:54 SAST" name="flushReport" finished-at="2025-04-09T13:15:54 SAST" duration-ms="682" status="PASS">
+        <test-method is-config="true" signature="flushReport()[pri:0, instance:BrowserTest@402c4085]" started-at="2025-04-09T19:45:08 SAST" name="flushReport" finished-at="2025-04-09T19:45:08 SAST" duration-ms="614" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flushReport -->

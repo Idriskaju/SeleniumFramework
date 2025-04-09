@@ -5,9 +5,11 @@
     <classes>
       <class name="BrowserTest">
         <methods>
-          <include name="teardown"/>
-          <include name="myTest"/>
-          <include name="setUp"/>
+          <include name="setupReport"/>
+          <include name="tearDown"/>
+          <include name="flushReport"/>
+          <include name="setupDriver"/>
+          <include name="fullFlowTest"/>
         </methods>
       </class> <!-- BrowserTest -->
     </classes>
